@@ -13,6 +13,9 @@ on:
       ksu_commit:
         required: false
         type: string
+      build_bypass:
+        required: true
+        type: boolean
 
 jobs:
   build-kernel-custom:
@@ -27,8 +30,8 @@ jobs:
           variant: "vTomsonek"
         - android_version: "android14"
           kernel_version: "6.1"
-          sub_level: "134"
-          os_patch_level: "2025-05"
+          sub_level: "145"
+          os_patch_level: "2025-09"
           variant: "TheWildJames"
         - android_version: "android14"
           kernel_version: "6.1"
@@ -51,3 +54,4 @@ jobs:
       variant: ${{ matrix.variant }}
       ksu_variant: ${{ inputs.ksu_variant }}
       ksu_commit: ${{ inputs.ksu_commit }}
+      build_bypass: ${{ inputs.build_bypass }}
